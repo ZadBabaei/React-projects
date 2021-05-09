@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import MovieAutoComplete from "./MovieAutoComplete";
 import { getMovieDataById } from './Search';
 import { useState } from 'react';
+import Movie from "./Movie";
 
 function App() {
   const [selectedMovies,setSelectedMovies]=useState([]);
@@ -26,8 +27,8 @@ function App() {
       </div>
       {
         selectedMovies.map((s) => {
-          return <h1>{s.name}</h1>
-          // return <Movie id={s.id} name={s.name} year={s.year} />
+          // return <h1>{s.name}</h1>
+          return <Movie id={s.id} name={s.title} year={s.release_date} />
         })
       }
       <div>
