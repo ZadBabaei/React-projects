@@ -28,7 +28,7 @@ function App() {
       {
         selectedMovies.map((s) => {
           // return <h1>{s.name}</h1>
-          return <Movie id={s.id} name={s.title} year={s.release_date} />
+          return <Movie id={s.id} name={s.title} year={s.release_date}  key={s.id}/>
         })
       }
       <div>
@@ -38,7 +38,7 @@ function App() {
         </Button>
         <Button variant="contained" color="secondary" onClick={(e) => {
           const newSelectedMovies = [...selectedMovies];
-          delete newSelectedMovies[newSelectedMovies.length];
+          delete newSelectedMovies[newSelectedMovies.length-1];
           setSelectedMovies(newSelectedMovies);
         }}>
           Undo

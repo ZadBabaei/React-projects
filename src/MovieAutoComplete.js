@@ -16,9 +16,7 @@ function MovieAutoComplete(props) {
         search(term, setOptions);
         
       }}
-      onSelect={(e)=>{props.onSelect(e)}}
-     
-     
+      onSelect={(e,t)=>{props.onSelect(t.movieid)}}
     /> 
     
   );

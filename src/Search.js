@@ -8,7 +8,8 @@ const search = (term, callBack) => {
     let result = TmdbResponse.map((item) => {
       const newobj = {
         label: item.original_title + " " + item.release_date,
-        value: item.id + "",
+        movieid: item.id + "",
+        value: item.original_title + " " + item.release_date
       };
       return newobj;
     });
