@@ -3,19 +3,22 @@ import getSearchApiURL from "./TmdbApi";
 
 const search = (term, callBack) => {
   let TmdbResponse = 0;
-  Axios.get(getSearchApiURL(term)).then((response) => {
-    TmdbResponse = response.data.results;
-    let result = TmdbResponse.map((item) => {
-      const newobj = {
-        label: item.original_title + " " + item.release_date,
-        movieid: item.id + "",
-        value: item.original_title + " " + item.release_date
-      };
-      return newobj;
+  if (term){
+    Axios.get(getSearchApiURL(term)).then((response) => {
+      TmdbResponse = response.data.results;
+      let result = TmdbResponse.map((item) => {
+        const newobj = {
+          label: item.original_title + " " + item.release_date,
+          movieid: item.id + "",
+          value: item.original_title + " " + item.release_date
+        };
+        return newobj;
+      });
+      callBack(result);
+    }).catch((e) => {
     });
-    callBack(result);
-  }).catch((e) => {
-  });
+  }
+
 };
 
 
@@ -32,7 +35,7 @@ export const getMovieDataById = (id, callback) => {
     "?api_key=" +
     apiKey ).then((response) => {
     let movieIdResponse = response.data;
-    // console.log("the mpvie id return",movieIdResponse)
+    // console.log("the movie id return",movieIdResponse)
     callback(movieIdResponse)
     }); 
 }
