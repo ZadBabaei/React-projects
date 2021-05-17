@@ -1,4 +1,3 @@
-import { Dashboard } from "@material-ui/icons";
 import Axios from "axios";
 import getSearchApiURL from "./TmdbApi";
 
