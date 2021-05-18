@@ -10,9 +10,9 @@ function App() {
   
   return (
     <Router>
-      <WelcomePage/>
       <Switch>
       <Route path="/SelectMovies"  component ={SelectMovies} />
+      <Route path="/"  exact component ={WelcomePage} />
       </Switch>
     </Router>
   );

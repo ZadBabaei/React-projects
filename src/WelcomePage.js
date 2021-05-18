@@ -9,15 +9,14 @@ function WelcomePage() {
     justify-content: space-around;
   `;
     return (
-
-        <Navigation>
+        <div>
             <Link to="/WelcomePage">
                 <h1>welcome</h1>
             </Link>
             <Link to="/SelectMovies">
                 <h1>select movies</h1>
             </Link>
-        </Navigation>
+        </div>
     );
   }
   
