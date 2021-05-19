@@ -1,6 +1,6 @@
-import { AutoComplete } from "antd";
-import React, { useState } from "react";
-import search from "./Search";
+import { AutoComplete } from 'antd';
+import React, { useState } from 'react';
+import search from './Search';
 
 function MovieAutoComplete(props) {
   const [options, setOptions] = useState([]);
@@ -16,7 +16,7 @@ function MovieAutoComplete(props) {
           search(term, setOptions);
         }}
         onSelect={(e, t) => {
-          props.onSelect(t.movieid);
+          props.onSelect(t.movieId);
         }}
       />
     </div>

@@ -1,12 +1,12 @@
-import "./App.css";
-import "antd/dist/antd.css";
-import Button from "@material-ui/core/Button";
-import Hero from "./Hero";
-import MovieAutoComplete from "./MovieAutoComplete";
-import { getMovieDataById } from "./Search";
-import { useState } from "react";
-import Movie from "./Movie";
-
+import './App.css';
+import 'antd/dist/antd.css';
+import Button from '@material-ui/core/Button';
+import Hero from './Hero';
+import MovieAutoComplete from './MovieAutoComplete';
+import { getMovieDataById } from './Search';
+import Movie from './Movie';
+import { useState } from 'react';
+const i = 0;
 function SelectMovies() {
   const [selectedMovies, setSelectedMovies] = useState([]);
   return (
@@ -15,7 +15,7 @@ function SelectMovies() {
       <div>
         <MovieAutoComplete
           onSelect={(id) => {
-            console.log("selected:", id);
+            console.log('selected:', id);
             getMovieDataById(id, (movieData) => {
               console.log("here's the movie data:", movieData);
               const newSelectedMovies = selectedMovies.concat([movieData]);
@@ -29,8 +29,8 @@ function SelectMovies() {
       })}
       <div>
         <Button variant="contained" color="primary">
-          {" "}
-          Vote{" "}
+          {' '}
+          Vote{' '}
         </Button>
         <Button
           variant="contained"
