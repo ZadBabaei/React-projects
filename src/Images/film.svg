@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1598.306" height="375.001" viewBox="0 0 1598.306 375.001">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.594" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#535353"/>
+    </radialGradient>
+    <filter id="Subtraction_1" x="0" y="0" width="1598.306" height="375.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="17" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="17" result="blur"/>
+      <feFlood/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Subtraction_1)">
+    <path id="Subtraction_1-2" data-name="Subtraction 1" d="M2423,1137H926.695c6.932-4.164,13.895-8.537,20.693-13H972v-17.028c6.74-4.911,13.469-10.027,20-15.207V1124h30v-34H994.214c5.662-4.533,11.335-9.243,16.861-14H1190V926h-52.584c3.145-5.252,6.26-10.635,9.257-16H1172V876h-7.712c1.881-3.928,3.761-7.964,5.587-12H2423v62H2175v150h248v61h0Zm-31-47v34h30v-34h-30Zm-50,0v34h30v-34h-30Zm-50,0h0v34h30v-34h-30Zm-50,0v34h30v-34h-30Zm-50,0h0v34h30v-34h-30Zm-50,0v34h30v-34h-30Zm-50,0v34h30v-34h-30Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0h0v34h30v-34h-30Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm-50,0v34h30v-34Zm488-164v150h600V926Zm-293,0v150h248V926Zm1155-50v34h30V876h-30Zm-50,0v34h30V876h-30Zm-50,0h0v34h30V876h-30Zm-50,0v34h30V876h-30Zm-50,0h0v34h30V876h-30Zm-50,0v34h30V876h-30Zm-50,0v34h30V876h-30Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0h0v34h30V876h-30Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Zm-50,0v34h30V876Z" transform="translate(-875.69 -830)" fill="url(#radial-gradient)"/>
+  </g>
+</svg>
