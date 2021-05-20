@@ -6,7 +6,7 @@ import MovieAutoComplete from './MovieAutoComplete';
 import { getMovieDataById } from './Search';
 import Movie from './Movie';
 import { useState } from 'react';
-const i = 0;
+
 function SelectMovies() {
   const [selectedMovies, setSelectedMovies] = useState([]);
   return (
