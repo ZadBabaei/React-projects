@@ -9,8 +9,8 @@ function WelcomePage() {
     margin: 0;
     padding: 0;
     background: transparent;
-
     width: 90rem;
+    height:60rem;
   `;
   const Film = styled.img`
     margin: 0;
