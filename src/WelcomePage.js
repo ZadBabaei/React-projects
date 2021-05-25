@@ -1,26 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import movieTape from './Images/movie tape3.png';
-import film from './Images/film.svg';
+import film from './Images/film.png';
 
 function WelcomePage() {
   const MovieTapeImg = styled.img`
     margin: 0;
     padding: 0;
     background: transparent;
-    width: 80rem;
-    height: 50rem;
+    width: 50rem;
     position: absolute;
     top: -5rem;
-    left: -30rem;
+    left: -20rem;
   `;
   const Film = styled.img`
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 23rem;
+    left: 12rem;
   `;
   const Div2 = styled.div`
     display: flex;
@@ -34,24 +33,34 @@ function WelcomePage() {
     padding: 0;
   `;
   const TextTop = styled.h1`
-    color: red;
-    font-size: 7rem;
+    color: white;
+    font-size: 6rem;
+    font-family:"TwCenMT";
     position: relative;
-    top: 10rem;
-    left: 16rem;
+    top: 9rem;
+    left: 51rem;
+  `;
+  const TextInside = styled.h1`
+    color: white;
+    font-size: 3.8rem;
+    position: absolute;
+    top:30.5rem;
+    left:55rem;
+  
   `;
 
   return (
     <Div2>
-      <div>
+
         <MovieTapeImg src={movieTape} alt={'movie image'}></MovieTapeImg>
-      </div>
-      <div>
-        <TextTop>movie nights</TextTop>
-      </div>
-      <div>
+
+        <TextTop>MOVIE NIGHT</TextTop>
+
         <Film src={film} alt={'movie image'}></Film>
-      </div>
+        <Link to="/SelectMovies">
+        <TextInside> CREATE NEW POLL</TextInside>
+        </Link>
+
     </Div2>
   );
 }
