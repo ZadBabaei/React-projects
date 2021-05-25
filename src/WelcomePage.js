@@ -35,7 +35,7 @@ function WelcomePage() {
   const TextTop = styled.h1`
     color: white;
     font-size: 6rem;
-    font-family:"TwCenMT";
+    font-family: 'TwCenMT';
     position: relative;
     top: 9rem;
     left: 51rem;
@@ -44,23 +44,20 @@ function WelcomePage() {
     color: white;
     font-size: 3.8rem;
     position: absolute;
-    top:30.5rem;
-    left:55rem;
-  
+    top: 30.5rem;
+    left: 55rem;
   `;
 
   return (
     <Div2>
+      <MovieTapeImg src={movieTape} alt={'movie image'}></MovieTapeImg>
 
-        <MovieTapeImg src={movieTape} alt={'movie image'}></MovieTapeImg>
+      <TextTop>MOVIE NIGHT</TextTop>
 
-        <TextTop>MOVIE NIGHT</TextTop>
-
-        <Film src={film} alt={'movie image'}></Film>
-        <Link to="/SelectMovies">
+      <Film src={film} alt={'movie image'}></Film>
+      <Link to="/SelectMovies">
         <TextInside> CREATE NEW POLL</TextInside>
-        </Link>
-
+      </Link>
     </Div2>
   );
 }
