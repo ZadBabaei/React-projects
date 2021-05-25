@@ -28,7 +28,8 @@
     "eject": "react-scripts eject",
     "format": "./node_modules/.bin/prettier './src/**/*.js' --write",
     "checkFormat": "./node_modules/.bin/prettier './src/**/*.js' --check",
-    "lint": "./node_modules/.bin/eslint ./src --max-warnings=0"
+    "lint": "./node_modules/.bin/eslint ./src --max-warnings=0",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
