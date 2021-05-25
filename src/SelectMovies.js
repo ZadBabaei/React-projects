@@ -14,9 +14,9 @@ function SelectMovies() {
       <Hero />
       <div>
         <MovieAutoComplete
-          onSelect={(id) => {
+          onSelect={id => {
             console.log('selected:', id);
-            getMovieDataById(id, (movieData) => {
+            getMovieDataById(id, movieData => {
               console.log("here's the movie data:", movieData);
               const newSelectedMovies = selectedMovies.concat([movieData]);
               setSelectedMovies(newSelectedMovies);
@@ -24,7 +24,7 @@ function SelectMovies() {
           }}
         />
       </div>
-      {selectedMovies.map((s) => {
+      {selectedMovies.map(s => {
         return <Movie movie={s} key={s.id} />;
       })}
       <div>
@@ -35,7 +35,7 @@ function SelectMovies() {
         <Button
           variant="contained"
           color="secondary"
-          onClick={(e) => {
+          onClick={e => {
             const newSelectedMovies = [...selectedMovies];
             newSelectedMovies.pop();
             setSelectedMovies(newSelectedMovies);

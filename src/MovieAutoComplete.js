@@ -11,7 +11,7 @@ function MovieAutoComplete(props) {
         style={{ width: 200 }}
         options={options}
         placeholder="try to type `b`"
-        onChange={(term) => {
+        onChange={term => {
           // console.log("this is in autocomplete",term);
           search(term, setOptions);
         }}

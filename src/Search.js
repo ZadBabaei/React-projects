@@ -8,9 +8,9 @@ const search = (term, callBack) => {
   }
 
   Axios.get(getSearchApiURL(term))
-    .then((response) => {
+    .then(response => {
       TmdbResponse = response.data.results;
-      let result = TmdbResponse.map((item) => {
+      let result = TmdbResponse.map(item => {
         let d = new Date(item.release_date);
         let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
         return {
@@ -21,7 +21,7 @@ const search = (term, callBack) => {
       });
       callBack(result);
     })
-    .catch((e) => {
+    .catch(e => {
       console.log(e);
     });
 };
@@ -32,7 +32,7 @@ const baseUrl2 = 'https://api.themoviedb.org/3/movie/';
 export const getMovieDataById = (id, callback) => {
   // 1. make api call
   // 2. put response into callback
-  Axios.get(baseUrl2 + id + '?api_key=' + apiKey).then((response) => {
+  Axios.get(baseUrl2 + id + '?api_key=' + apiKey).then(response => {
     let movieIdResponse = response.data;
     // console.log("the movie id return",movieIdResponse)
     callback(movieIdResponse);

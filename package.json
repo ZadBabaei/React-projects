@@ -31,11 +31,6 @@
     "lint": "./node_modules/.bin/eslint ./src --max-warnings=0",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run checkFormat"
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
