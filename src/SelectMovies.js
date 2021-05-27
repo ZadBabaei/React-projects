@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { useState } from 'react';
 import transparent_films from './Images/transparent_films.svg';
+import gray_box from './Images/gray_box.svg';
 
 function SelectMovies() {
   const ImageWraper = styled.div`
@@ -34,14 +35,27 @@ function SelectMovies() {
   const [selectedMovies, setSelectedMovies] = useState([]);
   return (
     <div>
+      <div>
+        <h1>movie nights</h1>
+      </div>
+      <div>
+        <img src={gray_box} alt="box" />
+        <img src={gray_box} alt="box" />
+        <img src={gray_box} alt="box" />
+        <img src={gray_box} alt="box" />
+        <img src={gray_box} alt="box" />
+        <img src={gray_box} alt="box" />
+      </div>
       <ImageWraper>
         <ButFimlImg src={transparent_films} alt="ds" />
       </ImageWraper>
       <div>
-        <Button variant="contained" color="primary">
-          {' '}
-          Vote{' '}
-        </Button>
+        <div>
+          <Button variant="contained" color="primary">
+            {' '}
+            Vote{' '}
+          </Button>
+        </div>
         <Button
           variant="contained"
           color="secondary"
