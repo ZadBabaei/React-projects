@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import transparent_films from './Images/transparent_films.svg';
 import gray_box from './Images/gray_box.svg';
+import backArrow from './Images/backArrow.png';
+import doneButt from './Images/doneButt.png';
+import { Link } from 'react-router-dom';
 
 function SelectMovies() {
   const ImageWraper = styled.div`
@@ -16,49 +19,92 @@ function SelectMovies() {
     left: 0rem;
   `;
 
-  const ButFimlImg = styled.img`
+  const ButFilmImg = styled.img`
     margin: 0;
     padding: 0;
     position: absolute;
     width: 50rem;
-    top: 0rem;
-    left: 0rem;
+    top: 14rem;
+    left: -20rem;
+    z-index: -1;
+  `;
+  const EmptyImgBox = styled.img`
+    margin: 0;
+    padding: 0;
+    width: 15rem;
   `;
 
-  //   const Film = styled.img`
-  //     margin: 0;
-  //     padding: 0;
-  //     position: absolute;
-  //     top: 23rem;
-  //     left: 12rem;
-  //   `;
+  const GrayBox = styled.div`
+    margin: 5rem;
+    position: relative;
+    padding: 0rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  `;
+  const DoneButton = styled.div`
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50rem;
+    right: 13rem;
+  `;
+  const TopLineText = styled.div`
+    margin: 2rem;
+    padding: 0;
+    display: inline-flex;
+  `;
+  const MovieTxt = styled.h1`
+    position: relative;
+    left: 1rem;
+    font-size: 2rem;
+    color: white;
+  `;
+  const ChoseTheMovies = styled.h1`
+    margin: 10;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    // {font-family: 'Times New Roman';
+    // position: absolute;
+    // right: 33rem;
+    font-size: 4rem;
+    color: white;
+  `;
+
   const [selectedMovies, setSelectedMovies] = useState([]);
   return (
     <div>
-      <div>
-        <h1>movie nights</h1>
-      </div>
-      <div>
-        <img src={gray_box} alt="box" />
-        <img src={gray_box} alt="box" />
-        <img src={gray_box} alt="box" />
-        <img src={gray_box} alt="box" />
-        <img src={gray_box} alt="box" />
-        <img src={gray_box} alt="box" />
-      </div>
+      <TopLineText>
+        <img src={backArrow} alt="" />
+        <Link to={''}>
+          <MovieTxt>MOVIE NIGHT</MovieTxt>
+        </Link>
+      </TopLineText>
+      <ChoseTheMovies Style="color:white;">
+        Choose up to 6 movies below
+      </ChoseTheMovies>
+      <GrayBox>
+        <EmptyImgBox src={gray_box} alt="box" />
+        <EmptyImgBox src={gray_box} alt="box" />
+        <EmptyImgBox src={gray_box} alt="box" />
+        <EmptyImgBox src={gray_box} alt="box" />
+        <EmptyImgBox src={gray_box} alt="box" />
+        <EmptyImgBox src={gray_box} alt="box" />
+      </GrayBox>
       <ImageWraper>
-        <ButFimlImg src={transparent_films} alt="ds" />
+        <ButFilmImg src={transparent_films} alt="ds" />
       </ImageWraper>
       <div>
-        <div>
-          <Button variant="contained" color="primary">
-            {' '}
-            Vote{' '}
-          </Button>
-        </div>
-        <Button
+        <DoneButton>
+          <Link to={'VotingLink'}>
+            <img Style="width:10rem;" src={doneButt} alt="done" />
+          </Link>
+        </DoneButton>
+        {/* <Button
           variant="contained"
-          color="secondary"
+          color="primary"
           onClick={e => {
             const newSelectedMovies = [...selectedMovies];
             newSelectedMovies.pop();
@@ -66,7 +112,7 @@ function SelectMovies() {
           }}
         >
           Undo
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
