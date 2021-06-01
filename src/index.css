@@ -110,6 +110,9 @@ input, select {
 
 body {
     background: linear-gradient(180deg, rgba(52,68,88,1) 0%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    height: auto;
+    overflow:hidden;
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
