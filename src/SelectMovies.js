@@ -1,6 +1,6 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { useState } from 'react';
 import transparent_films from './Images/transparent_films.svg';
@@ -74,8 +74,21 @@ function SelectMovies() {
   `;
 
   const [selectedMovies, setSelectedMovies] = useState([]);
+
+  const [myBoolean, setMyBoolean] = useState(true);
+
+  const getMovieComponents = () => {
+    if (true) return [<h1>test</h1>];
+  };
+
   return (
     <div>
+      {[0, 1, 2, 3, 4, 5].map(i => {
+        return <h2>{i}</h2>;
+      })}
+      {getMovieComponents([])}
+      {myBoolean &&
+        'HELLOOOOOO11111111111111111111111111111111111111111111111111111111111111111111'}
       <TopLineText>
         <img src={backArrow} alt="" />
         <Link to={''}>

@@ -46,16 +46,22 @@ function VotingLink() {
   `;
   const BladeShapeLable = styled.img`
     position: absolute;
+
     width: 40rem;
     display: block;
     left: 40rem;
     top: 20rem;
   `;
   const LinkText = styled.div`
-    font-size: 2.5rem;
+    width: 22rem;
     position: relative;
-    left: 49.5rem;
-    top: 8rem;
+    left: 49rem;
+    top: 9rem;
+  `;
+  const LinkTexth1 = styled.h1`
+    font-size: 2.3rem;
+    word-break: break-word;
+    color: white;
   `;
 
   const CopyButt = styled.img`
@@ -79,9 +85,9 @@ function VotingLink() {
       <YourVotinTxt Style="color:white;">Your voting link:</YourVotinTxt>
       <BladeShapeLable src={bladeShapelable} alt="" />
       <LinkText>
-        <h1 Style="color:white">
-          https://<br></br>zadbabaei.github.io/<br></br>MovieNights/
-        </h1>
+        <LinkTexth1>
+          https://zadbabaei.github.io/MovieNights/SelectMovies
+        </LinkTexth1>
       </LinkText>
 
       <CopyButt src={copyButt} alt="copy button" />
