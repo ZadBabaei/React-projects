@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import bladeShapelable from './Images/bladeShapelable.png';
 import backArrow from './Images/backArrow.png';
-import copyButt from './Images/copyButt.png';
+import nxtyButt from './Images/nextBut.png';
 import transparent_films from './Images/transparent_films.svg';
+import { Input } from 'antd';
 
-function VotingLink() {
+function VotingTicket() {
   const MovieTxt = styled.h1`
     position: relative;
     left: 1rem;
@@ -59,16 +60,18 @@ function VotingLink() {
     top: 9rem;
   `;
   const LinkTexth1 = styled.h1`
-    font-size: 2.3rem;
+    font-size: 5rem;
     word-break: break-word;
     color: white;
   `;
 
-  const CopyButt = styled.img`
+  const NextButt = styled.img`
     width: 12rem;
-    position: relative;
-    left: 53.5rem;
-    top: 15rem;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50rem;
+    right: 13rem;
   `;
 
   return (
@@ -82,18 +85,23 @@ function VotingLink() {
       <ImageWraper>
         <ButFilmImg src={transparent_films} alt="ds" />
       </ImageWraper>
-      <YourVotinTxt Style="color:white;">Your voting link:</YourVotinTxt>
+      <YourVotinTxt Style="color:white;">Your voting Ticket:</YourVotinTxt>
+
       <BladeShapeLable src={bladeShapelable} alt="" />
       <LinkText>
         <LinkTexth1>
-          https://zadbabaei.github.io/MovieNights/SelectMovies
+          <Input
+            size={'large'}
+            bordered={false}
+            placeholder="ENTER YOUR NAME"
+          />
         </LinkTexth1>
       </LinkText>
-      <Link to="VotingTicket">
-        <CopyButt src={copyButt} alt="copy button" />
+      <Link to="SelectMovies">
+        <NextButt src={nxtyButt} alt="copy button" />
       </Link>
     </div>
   );
 }
 
-export default VotingLink;
+export default VotingTicket;

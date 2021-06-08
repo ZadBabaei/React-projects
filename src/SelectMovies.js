@@ -8,6 +8,9 @@ import gray_box from './Images/gray_box.svg';
 import backArrow from './Images/backArrow.png';
 import doneButt from './Images/doneButt.png';
 import { Link } from 'react-router-dom';
+import { getMovieDataById } from './Search';
+import Movie from './Movie';
+import MovieAutoComplete from './MovieAutoComplete';
 
 function SelectMovies() {
   const ImageWraper = styled.div`
@@ -72,23 +75,37 @@ function SelectMovies() {
     font-size: 4rem;
     color: white;
   `;
+  const AutoCompleteOnClick = styled.div`
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+  `;
 
   const [selectedMovies, setSelectedMovies] = useState([]);
 
-  const [myBoolean, setMyBoolean] = useState(true);
+  const [myBoolean, setMyBoolean] = useState(false);
 
-  const getMovieComponents = () => {
-    if (true) return [<h1>test</h1>];
-  };
+  const arr = [1, 2, 3, 4, 5, 6];
 
   return (
     <div>
-      {[0, 1, 2, 3, 4, 5].map(i => {
-        return <h2>{i}</h2>;
-      })}
-      {getMovieComponents([])}
-      {myBoolean &&
-        'HELLOOOOOO11111111111111111111111111111111111111111111111111111111111111111111'}
+      {myBoolean && (
+        <AutoCompleteOnClick>
+          <MovieAutoComplete
+            onSelect={id => {
+              console.log('selected:', id);
+              getMovieDataById(id, movieData => {
+                const newSelectedMovies = selectedMovies.concat([movieData]);
+                setSelectedMovies(newSelectedMovies);
+                setMyBoolean(false);
+              });
+            }}
+          />
+        </AutoCompleteOnClick>
+      )}
+
       <TopLineText>
         <img src={backArrow} alt="" />
         <Link to={''}>
@@ -99,12 +116,21 @@ function SelectMovies() {
         Choose up to 6 movies below
       </ChoseTheMovies>
       <GrayBox>
-        <EmptyImgBox src={gray_box} alt="box" />
-        <EmptyImgBox src={gray_box} alt="box" />
-        <EmptyImgBox src={gray_box} alt="box" />
-        <EmptyImgBox src={gray_box} alt="box" />
-        <EmptyImgBox src={gray_box} alt="box" />
-        <EmptyImgBox src={gray_box} alt="box" />
+        {selectedMovies.map(s => {
+          arr.pop();
+          return <Movie movie={s} key={s.id} />;
+        })}
+        {arr.map(i => {
+          return (
+            <EmptyImgBox
+              onClick={e => {
+                setMyBoolean(true);
+              }}
+              src={gray_box}
+              alt="box"
+            />
+          );
+        })}
       </GrayBox>
       <ImageWraper>
         <ButFilmImg src={transparent_films} alt="ds" />
